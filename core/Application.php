@@ -22,14 +22,14 @@
 			$this->router = new Router($this->request, $this->response);
 			$this->db = new Database();
 
-			// $primary_value = $this->session->get('user') ?? false;
+			$primary_value = $this->session->get('user') ?? false;
 
-			// if ($primary_value) {
-			// 	$primary_key = \models\User::primaryKey();
-			// 	$this->user = \models\User::findOne([$primary_key => $primary_value]);
-			// } else {
-			// 	$this->user = null;
-			// }
+			if ($primary_value) {
+				$primary_key = \models\User::primaryKey();
+				$this->user = \models\User::findOne([$primary_key => $primary_value]);
+			} else {
+				$this->user = null;
+			}
 		}
 
 		public function run() {
@@ -37,25 +37,25 @@
 			echo $this->router->resolve();
 		}
 
-		public function login(DbModel $user, $remember_me) {
+		// public function login(DbModel $user, $remember_me) {
 
-			$this->user = $user;
-			$primary_key = $user->primaryKey();
-			$primary_value = $user->{$primary_key};
-			$this->session->set('user', $primary_value);
+		// 	$this->user = $user;
+		// 	$primary_key = $user->primaryKey();
+		// 	$primary_value = $user->{$primary_key};
+		// 	$this->session->set('user', $primary_value);
 
-			if ($remember_me) {
-				setcookie(session_name(), session_id(), time() + 7 * 24 * 3600);
-			}
-			return true;
-		}
+		// 	if ($remember_me) {
+		// 		setcookie(session_name(), session_id(), time() + 7 * 24 * 3600);
+		// 	}
+		// 	return true;
+		// }
 
-		public function logout() {
+		// public function logout() {
 
-			$this->user = null;
-			$this->session->remove('user');
-			setcookie(session_name(), session_id(), time() - 7 * 24 * 3600);
-		}
+		// 	$this->user = null;
+		// 	$this->session->remove('user');
+		// 	setcookie(session_name(), session_id(), time() - 7 * 24 * 3600);
+		// }
 
 	}
 ?>

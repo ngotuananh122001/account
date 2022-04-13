@@ -526,20 +526,7 @@ ul, li {
 	display: none;
 }
 
-#register-success {
-	padding: 20px;
-    width: 200px;
-    margin: 0 auto;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: green;
-    color: white;
-    font-size: 20px;
-    z-index: 999;
-    text-align: center;
-}
+
 
 
 

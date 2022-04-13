@@ -39,13 +39,6 @@
 
     <body>
 
-		<!-- Popup sucessfully register -->
-		<?php if (\core\Application::$app->session->getFlash('success')) : ?>
-			<div id="register-success">
-				<?php echo \core\Application::$app->session->getFlash('success'); ?>
-			</div>
-		<?php endif; ?>
-
         <div id="panel">
             <div class="panel-header">
                 <img

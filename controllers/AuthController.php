@@ -15,20 +15,20 @@
 			$register_form = new \handle\RegisterForm();
 			$register_form->loadData($req->getBody());
 
-			if ($register_form->validate()) {
-
+			if ($register_form->validate() && $register_form->register()) {
+				// create successfully
+				
+				\core\Application::$app->session->setFlash('success', 'Thanks for registering');
 				return $this->responseToAjax([
-					'message' => 'success',
-					'data' => 200
+					'message' => 'success'
 				]);
 			} else {
-				$res->setStatusCode(403);
+				$res->setStatusCode(400);
 				return $this->responseToAjax([
 					'message' => 'fail',
 					'errors' => $register_form->errors
 				]);
 			}
-
 
 		}
 

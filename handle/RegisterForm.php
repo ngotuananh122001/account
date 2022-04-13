@@ -35,5 +35,30 @@
 					]]
 			];
 		}
+
+		public function register() {
+
+			$user = \models\User::findOne([
+				'email' => $this->email
+			]);
+
+			if ($user) {
+				$this->error('email', 'User does not exits with this email');
+				return false;
+			}
+
+			// create new record in database
+			$user = new \models\User();
+
+			foreach ($this as $key => $value) {
+				if (property_exists($user, $key)) {
+					$user->{$key} = $value;
+				}
+			}
+
+			$user->create();
+
+			return true;
+		}
 	}
 ?>

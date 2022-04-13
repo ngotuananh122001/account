@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
 	<div id="auth">
 		<div class="auth-content">
 			<div class="auth-logo">
@@ -39,7 +40,7 @@
 						Password
 						<span></span>
 					</div>
-					<input type="email" name="password" />
+					<input type="password" name="password" />
 					<div class="feedback">
 					</div>
 				</div>
@@ -83,6 +84,21 @@
 	</div>
 
 	<div id="background"></div>
+
+	<!-- Popup sucessfully register -->
+	<?php if (\core\Application::$app->session->getFlash('success')) : ?>
+		
+			<?php 
+				$message = \core\Application::$app->session->getFlash('success');
+				echo "
+					<script>
+						alert('$message');
+					</script>
+				";
+			?>
+
+	<?php endif; ?>
+
 </body>
 
 </html>

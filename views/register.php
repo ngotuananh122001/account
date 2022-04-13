@@ -9,36 +9,6 @@
 	<link rel="stylesheet" href="/views/css/auth.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="/views/js/register.js"></script>
-	<script>
-
-		$(document).ready(function () {
-
-			$('#register-form').submit(function (e) {
-
-				e.preventDefault();
-				var form_data = $(this)
-					.serializeArray()
-					.reduce(function (json, {name, value}) {
-						json[name] = value;
-						return json;
-					}, {});
-
-				$.ajax({
-					url: '/register',
-					type: 'POST',
-					dataType: 'json', // the type of data which expecting back from server
-					data: form_data,
-					success: function (data, textStatus, xhr) {
-
-						console.log(`Sever: ${xhr} - ${textStatus}`);
-						console.log(data);
-					}
-				})
-
-			});
-
-		});
-	</script>
 </head>
 
 <body>
@@ -64,7 +34,7 @@
 						First name
 						<span></span>
 					</div>
-					<input type="text" name="firstname" />
+					<input type="text" name="firstname" class="js-input" />
 					<div class="feedback">
 					</div>
 				</div>
@@ -74,7 +44,7 @@
 						Last name
 						<span></span>
 					</div>
-					<input type="text" name="lastname" />
+					<input type="text" name="lastname" class="js-input" />
 					<div class="feedback">
 					</div>
 				</div>
@@ -84,7 +54,7 @@
 						Email
 						<span></span>
 					</div>
-					<input type="email" name="email" />
+					<input type="email" name="email" class="js-input" />
 					<div class="feedback">
 					</div>
 				</div>
@@ -94,7 +64,7 @@
 						Password
 						<span></span>
 					</div>
-					<input type="password" name="password" />
+					<input type="password" name="password" class="js-input" />
 					<div class="feedback">
 					</div>
 				</div>
@@ -104,19 +74,15 @@
 						Confirm password
 						<span></span>
 					</div>
-					<input type="password" name="password_confirm" />
+					<input type="password" name="password_confirm" class="js-input"/>
 					<div class="feedback">
 					</div>
 				</div>
 
 				<div class="form-item" id="submit">
-					<div class="checkbox">
-						<input type="checkbox" name="saved" />
-						Keep me logged in
-					</div>
-
+					
 					<div class="submit-btn">
-						<input type="submit" value="Login to start working" />
+						<input type="submit" value="Create user member" />
 					</div>
 				</div>
 
