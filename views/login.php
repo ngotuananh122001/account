@@ -6,6 +6,9 @@
 	<title>Login | Base.vn</title>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:500,400,300,400italic,700,700italic,400italic,300italic&amp;subset=vietnamese,latin" />
 	<link rel="stylesheet" href="/views/css/auth.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="/views/js/common.js"></script>
+	<script src="/views/js/login.js"></script>
 </head>
 
 <body>
@@ -13,7 +16,7 @@
 	<div id="auth">
 		<div class="auth-content">
 			<div class="auth-logo">
-				<a href="https://base.vn">
+				<a href="#">
 					<img src="https://share-gcdn.basecdn.net/brand/logo.full.png" />
 				</a>
 			</div>
@@ -87,8 +90,8 @@
 
 	<!-- Popup sucessfully register -->
 	<?php if (\core\Application::$app->session->getFlash('success')) : ?>
-		
-			<?php 
+
+			<?php
 				$message = \core\Application::$app->session->getFlash('success');
 				echo "
 					<script>

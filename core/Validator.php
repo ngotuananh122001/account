@@ -67,7 +67,7 @@
 			$this->errors[$attr][] = $msg;
 		}
 
-		public function addError($attribute, $rule, $params = []) {
+		private function addError($attribute, $rule, $params = []) {
 
 			$message = $this->errorMessage()[$rule] ?? '';
 
@@ -78,7 +78,7 @@
 			$this->errors[$attribute][] = $message;
 		}
 
-		public function errorMessage() {
+		private function errorMessage() {
 
 			return [
 				self::RULE_REQUIRED => 'This field is required',

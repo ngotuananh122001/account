@@ -4,11 +4,11 @@
 
 	class User extends \core\Model {
 
+		public $id;
 		public $firstname;
 		public $lastname;
 		public $email;
 		public $password;
-		public $password_confirm;
 		public $job_title = '';
 		public $address = '';
 		public $image = '';
@@ -22,9 +22,9 @@
 
 			return 'id';
 		}
-		
-		public function attributes() {
-			
+
+		public static function attributes() {
+
 			return ['firstname', 'lastname', 'email', 'password', 'job_title', 'address', 'image'];
 		}
 

@@ -6,9 +6,9 @@
 
 		abstract public static function tableName();
 
-		abstract public function attributes(); // return array
-
 		abstract public static function primaryKey(); // return string
+
+		abstract public static function attributes(); // return array
 
 		public function create() {
 

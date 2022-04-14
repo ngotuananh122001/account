@@ -1,77 +1,94 @@
-$(document).ready(function() {
-	$('.js-btn-submit').click(function() {
+// $(document).ready(function() {
+// 	$('.js-btn-submit').click(function() {
 
-		var form = new FormData($('#js-upload-form')[0]);
-		$.ajax({
-			url: '/',
-			processData: false,
-			contentType: false,
-			type: 'POST',
-			data: form,
-			success: function (res) {
-				res = JSON.parse(res);
-				if (res.message === 'success') {
-					window.location.replace('/');
-				}
-			}
-		});
-	});
+// 		var form = new FormData($('#js-upload-form')[0]);
+// 		$.ajax({
+// 			url: '/',
+// 			processData: false,
+// 			contentType: false,
+// 			type: 'POST',
+// 			data: form,
+// 			success: function (res) {
+// 				res = JSON.parse(res);
+// 				if (res.message === 'success') {
+// 					window.location.replace('/');
+// 				}
+// 			}
+// 		});
+// 	});
 
-	$('.js-logout-btn').click(function() {
+// 	$('.js-logout-btn').click(function() {
 
-		window.location.replace('/logout');
-	});
+// 		window.location.replace('/logout');
+// 	});
 
-	$('.js-image-input').change(function() {
+// 	$('.js-image-input').change(function() {
 
-		console.log("Here");
-		var form = new FormData($('#js-upload-image-form')[0]);
+// 		console.log("Here");
+// 		var form = new FormData($('#js-upload-image-form')[0]);
 
-		$.ajax({
-			url: '/',
-			type: 'POST',
-			processData: false,
-			contentType: false,
-			data: form,
-			success: function (res) {
+// 		$.ajax({
+// 			url: '/',
+// 			type: 'POST',
+// 			processData: false,
+// 			contentType: false,
+// 			data: form,
+// 			success: function (res) {
 
-				res = JSON.parse(res);
-				if (res.message === 'success') {
-					window.location.replace('/');
-				}
-			}
-		});
-	});
+// 				res = JSON.parse(res);
+// 				if (res.message === 'success') {
+// 					window.location.replace('/');
+// 				}
+// 			}
+// 		});
+// 	});
 
-	$('#recover-form').submit(function (e) {
-		console.log("Submit");
-		e.preventDefault();
+// 	$('#recover-form').submit(function (e) {
+// 		console.log("Submit");
+// 		e.preventDefault();
 
-		var form = new FormData($(this)[0]);
+// 		var form = new FormData($(this)[0]);
 
-		$.ajax({
-			url: '/recover',
-			type: 'POST',
-			processData: false,
-			contentType: false,
-			data: form,
-			success: function (res) {
+// 		$.ajax({
+// 			url: '/recover',
+// 			type: 'POST',
+// 			processData: false,
+// 			contentType: false,
+// 			data: form,
+// 			success: function (res) {
 
-				res = JSON.parse(res);
+// 				res = JSON.parse(res);
 
-				if (res.message === 'fail') {
-					feedBack(e.target, res.errors);
-				}
+// 				if (res.message === 'fail') {
+// 					feedBack(e.target, res.errors);
+// 				}
 
-			}
-		});
-	});
+// 			}
+// 		});
+// 	});
 
 
-	function feedBack(form, errors) {
+// 	function feedBack(form, errors) {
 
-		var feedback = form.querySelector('.feedback');
-		feedback.classList.add('error');
-		feedback.innerHTML = errors[0];
+// 		var feedback = form.querySelector('.feedback');
+// 		feedback.classList.add('error');
+// 		feedback.innerHTML = errors[0];
+// 	}
+// });
+
+function feedBack(form, key, firstError) {
+
+	// find element
+	var element = form.querySelector(`input[name=${key}] + .feedback`);
+	element.classList.add('error');
+	element.innerHTML = firstError;
+}
+
+function refreshFeedBack() {
+	var feedbacks = document.querySelectorAll('.feedback');
+
+	for (var feedback of feedbacks) {
+		feedback.classList.remove('error');
+		feedback.innerHTML = '';
 	}
-});
+}

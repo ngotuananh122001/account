@@ -15,21 +15,32 @@
 			];
 		}
 
-		// public function login($remember_me = false) {
+		public function login() {
 
-		// 	$user = \models\User::findOne(['email' => $this->email]);
+			$user = \models\User::findOne([
+				'email' => $this->email
+			]);
 
-		// 	if (!$user) {
-		// 		$this->error('email', 'User does not exits with this email');
-		// 		return false;
-		// 	}
+			if (!$user) {
+				$this->error('email', 'User does not exits with this email');
+				return false;
+			}
 
-		// 	if (!password_verify($this->password, $user->password)) {
-		// 		$this->error('password', 'Password is incorrect');
-		// 		return false;
-		// 	}
+			if (!password_verify($this->password, $user->password)) {
+				$this->error('password', 'Password doesn\'t correct');
+				return false;
+			}
 
-		// 	return \core\Application::$app->login($user, $remember_me);
-		// }
+
+			\core\Application::$app->user = $user;
+			\core\Application::$app->session->set('user', $user->id);
+
+			// check for keeping user logged in
+			if ($this->saved) {
+				setcookie(session_name(), session_id(), time() + 7 * 24 * 3600);
+			}
+
+			return true;
+		}
 	}
 ?>

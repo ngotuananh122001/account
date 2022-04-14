@@ -37,18 +37,7 @@
 			echo $this->router->resolve();
 		}
 
-		// public function login(DbModel $user, $remember_me) {
 
-		// 	$this->user = $user;
-		// 	$primary_key = $user->primaryKey();
-		// 	$primary_value = $user->{$primary_key};
-		// 	$this->session->set('user', $primary_value);
-
-		// 	if ($remember_me) {
-		// 		setcookie(session_name(), session_id(), time() + 7 * 24 * 3600);
-		// 	}
-		// 	return true;
-		// }
 
 		// public function logout() {
 

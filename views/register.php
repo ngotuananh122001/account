@@ -4,10 +4,10 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Sign up | Base.vn</title>
-	<link rel="stylesheet" type="text/css"
-		href="https://fonts.googleapis.com/css?family=Roboto:500,400,300,400italic,700,700italic,400italic,300italic&amp;subset=vietnamese,latin" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:500,400,300,400italic,700,700italic,400italic,300italic&amp;subset=vietnamese,latin" />
 	<link rel="stylesheet" href="/views/css/auth.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="/views/js/common.js"></script>
 	<script src="/views/js/register.js"></script>
 </head>
 
@@ -15,7 +15,7 @@
 	<div id="auth">
 		<div class="auth-content">
 			<div class="auth-logo">
-				<a href="https://base.vn">
+				<a href="#">
 					<img src="https://share-gcdn.basecdn.net/brand/logo.full.png" />
 				</a>
 			</div>
@@ -74,13 +74,13 @@
 						Confirm password
 						<span></span>
 					</div>
-					<input type="password" name="password_confirm" class="js-input"/>
+					<input type="password" name="password_confirm" class="js-input" />
 					<div class="feedback">
 					</div>
 				</div>
 
 				<div class="form-item" id="submit">
-					
+
 					<div class="submit-btn">
 						<input type="submit" value="Create user member" />
 					</div>
