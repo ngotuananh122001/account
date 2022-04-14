@@ -62,7 +62,7 @@ body {
     color: #888;
 }
 
-#login-form, #recover-form, #register-form {
+form {
     padding: 30px 0;
     padding-bottom: 0;
 }

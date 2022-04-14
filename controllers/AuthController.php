@@ -69,6 +69,32 @@
 
 			$res->redirect('/login');
 		}
+
+		public function recover(\core\Request $req, \core\Response $res) {
+
+			// GET method
+			if ($req->isGet()) {
+				return $this->render('recover');
+			}
+
+			// POST method
+			$recover_form = new \handle\RecoverForm();
+			$recover_form->loadData($req->getBody());
+
+			if ($recover_form->validate() && $recover_form->recover()) {
+
+				return $this->responseToAjax([
+					'message' => 'success'
+				]);
+			} else {
+
+				$res->setStatusCode(400);
+				return $this->responseToAjax([
+					'message' => 'fail',
+					'errors' => $recover_form->errors,
+				]);
+			}
+		}
 	}
 
 ?>

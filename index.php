@@ -15,6 +15,8 @@ use core\Router;
 	$app->router->get('/register', [\controllers\AuthController::class, 'register']);
 	$app->router->post('/register', [\controllers\AuthController::class, 'register']);
 	$app->router->get('/logout', [\controllers\AuthController::class, 'logout']);
+	$app->router->get('/recover', [\controllers\AuthController::class, 'recover']);
+	$app->router->post('/recover', [\controllers\AuthController::class, 'recover']);
 
 	$app->router->get('/', [\controllers\SiteController::class, 'home']);
 

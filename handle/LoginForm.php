@@ -9,6 +9,7 @@
 		public $saved = false; // for keeping user logged in
 
 		public function rules() {
+
 			return [
 				'email' => [self::RULE_REQUIRED, self::RULE_EMAIL],
 				'password' => [self::RULE_REQUIRED],
