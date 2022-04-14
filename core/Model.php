@@ -10,6 +10,12 @@
 
 		abstract public static function attributes(); // return array
 
+		public function primaryValue() {
+
+			return $this->{static::primaryKey()};
+		}
+
+
 		public function create() {
 
 			$table_name = $this->tableName();
@@ -31,6 +37,25 @@
 			return true;
 		}
 
+		public function update($attr_keys) {
+
+			$table_name = static::tableName();
+			$primary_key = static::primaryKey();
+			$primary_value = $this->primaryValue();
+
+			$sql = implode(", ", array_map(function($attr) {
+				return "$attr = :$attr";
+			}, $attr_keys));
+
+			$statement = self::prepare("UPDATE $table_name SET $sql WHERE $primary_key = $primary_value");
+
+			foreach ($attr_keys as $key) {
+				$statement->bindValue(":$key", $this->{$key});
+			}
+
+			$statement->execute();
+		}
+
 		public static function findOne($params) {
 
 			$table_name = static::tableName();
@@ -48,26 +73,6 @@
 
 			$statement->execute();
 			return $statement->fetchObject(static::class);
-		}
-
-		public static function update($attributes, $primary_value) {
-
-			$table_name = static::tableName();
-			$primary_key = static::primaryKey();
-
-			$attr_keys = array_keys($attributes);
-
-			$sql = implode(", ", array_map(function($attr) {
-				return "$attr = :$attr";
-			}, $attr_keys));
-
-			$statement = self::prepare("UPDATE $table_name SET $sql WHERE $primary_key = $primary_value");
-
-			foreach ($attributes as $key => $value) {
-				$statement->bindValue(":$key", $value);
-			}
-
-			$statement->execute();
 		}
 
 		public static function prepare($sql) {

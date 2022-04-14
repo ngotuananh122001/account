@@ -50,10 +50,7 @@
 					'message' => 'success',
 				]);
 
-				// echo '<pre>';
-				// var_dump(\core\Application::$app->user);
-				// echo '</pre>';
-				// exit;
+
 			} else {
 				// fail
 				$res->setStatusCode(400);

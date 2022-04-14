@@ -26,13 +26,14 @@
 	<link rel="stylesheet" href="/views/css/home.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="/views/js/home.js"></script>
+
 </head>
 
 <body>
 
 	<div id="panel">
 		<div class="panel-header">
-			<img src="/images/<?php echo $img ?>" alt="user-image" id="profile_img" />
+			<img src="/uploads/<?php echo $img ?>" alt="user-image" id="profile_img" />
 		</div>
 
 		<div class="panel-body">
@@ -104,12 +105,11 @@
 		<div id="profile">
 			<div class="header">
 				<div class="image upload">
-					<img src="/images/<?php echo $img ?>">
+					<img src="/uploads/<?php echo $img ?>">
 					<div class="upload-form">
-						<form method="post" id="js-upload-image-form" enctype="multipart/form-data">
+						<form action="/update" method="post" id="upload-image-form" enctype="multipart/form-data">
 							<label for="image-label"></label>
-							<input type="file" id="image-label" name="image" accept=".jpg, .jpeg, .png" class="js-image-input">
-							<input type="hidden" name='update_image'>
+							<!-- <input type="file" id="image-label" name="image" accept=".jpg, .jpeg, .png" class="js-image-input"> -->
 						</form>
 					</div>
 				</div>
@@ -298,7 +298,7 @@
 				</div>
 			</div>
 			<div class="popup-content">
-				<form action="" id="js-upload-form" method="POST" enctype="multipart/form-data">
+				<form action="" id="upload-form" method="POST" enctype="multipart/form-data">
 
 					<!-- Code update profile -->
 
@@ -371,8 +371,8 @@
 						</div>
 					</div>
 					<div class="form-button">
-						<div class="button ok js-btn-submit">Update</div>
-						<div class="button cancel">Cancel</div>
+						<button type="submit" class="button ok">Update</button>
+						<button type="button" class="button cancel js-cancel-upload">Cancel</button>
 					</div>
 				</form>
 			</div>
@@ -399,6 +399,8 @@
 		edit_btn.onclick = showModal;
 
 		close_btn.onclick = showModal;
+
+		document.querySelector('.js-cancel-upload').onclick = showModal;
 	</script>
 
 </body>

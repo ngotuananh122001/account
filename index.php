@@ -17,5 +17,7 @@ use core\Router;
 	$app->router->get('/logout', [\controllers\AuthController::class, 'logout']);
 
 	$app->router->get('/', [\controllers\SiteController::class, 'home']);
+
+	$app->router->post('/update', [\controllers\UserController::class, 'updateProfile']);
 	$app->run();
 ?>

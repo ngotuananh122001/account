@@ -11,7 +11,7 @@
 		public $controller;
 		public $db; // type Database
 		public $session;
-		public $user;
+		public $user = null;
 
 		public function __construct() {
 
@@ -27,9 +27,10 @@
 			if ($primary_value) {
 				$primary_key = \models\User::primaryKey();
 				$this->user = \models\User::findOne([$primary_key => $primary_value]);
-			} else {
-				$this->user = null;
 			}
+			// } else {
+			// 	$this->user = null;
+			// }
 		}
 
 		public function run() {
