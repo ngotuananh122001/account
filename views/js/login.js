@@ -31,6 +31,9 @@ $(document).ready(function () {
 					for (var key in errors_obj) {
 						feedBack(form, key, errors_obj[key][0]);
 					}
+
+					grecaptcha.reset();
+
 				}
 			}
 

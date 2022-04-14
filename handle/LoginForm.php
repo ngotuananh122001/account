@@ -17,6 +17,12 @@
 
 		public function login() {
 
+			// verify captch
+			if (! ReCaptcha::verifyCaptcha($this, $_POST['g-recaptcha-response'])) {
+				return false;
+			}
+
+
 			$user = \models\User::findOne([
 				'email' => $this->email
 			]);
@@ -42,5 +48,7 @@
 
 			return true;
 		}
+
+
 	}
 ?>

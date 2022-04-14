@@ -103,10 +103,6 @@ body {
     border-color: rgba(66, 184, 20, 0.7);
 }
 
-#submit {
-    padding-top: 40px;
-}
-
 #submit input[type=checkbox] {
     width: initial;
     vertical-align: -2px;
@@ -216,6 +212,11 @@ body {
 	color: red;
     font-size: 13px;
     padding-top: 10px;
+}
+
+.feedback-captcha {
+	padding: 10px 0;
+    color: red;
 }
 
 #register-success {
