@@ -1,3 +1,4 @@
+
 -- --------------------------------------------------------
 
 --
@@ -21,9 +22,11 @@ CREATE TABLE `users` (
 -- Table structure for table `pwdReset`
 --
 
-create table pwdReset (
+CREATE TABLE pwdReset (
   id int not null primary key,
   email varchar(255) not null,
   token text not null,
   expire text not null
 );
+
+

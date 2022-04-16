@@ -6,12 +6,7 @@ use core\Router;
 		include_once '../' . $class_name . '.php';
 	});
 
-	$config = [
-		'PUBLIC_KEY' => '6LfkfXMfAAAAAHgm2xcqCl2W--YjekNkWJh7yh2Y', // google recaptcha
-		'PRIVATE_KEY' => '6LfkfXMfAAAAAIyGI71bdX76fgXrRgpajHtlVgBh', // google recaptcha
-		'SENDER_EMAIL' => 'ah.ngotuananh12oo1@gmail.com',
-		'URL' => 'http://www.localhost:8080'
-	];
+	require '../config.php';
 
 	$app = new core\Application($config);
 
