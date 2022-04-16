@@ -95,6 +95,17 @@
 				]);
 			}
 		}
+
+		public function resetPwd(\core\Request $req, \core\Response $res) {
+
+			// GET method
+			if ($req->isGet()) {
+				return $this->render('reset');
+			}
+
+			// POST method
+			
+		}
 	}
 
 ?>

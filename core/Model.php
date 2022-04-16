@@ -56,6 +56,24 @@
 			$statement->execute();
 		}
 
+		public static function delete($params) {
+
+			$table_name = static::tableName();
+			$attr_keys = array_keys($params);
+
+			$cond = implode(" AND ", array_map(function ($attr) {
+				return "$attr = :$attr";
+			}, $attr_keys));
+
+			$statement = self::prepare("DELETE FROM $table_name WHERE $cond");
+
+			foreach ($params as $key => $value) {
+				$statement->bindValue(":$key", $value);
+			}
+
+			$statement->execute();
+		}
+
 		public static function findOne($params) {
 
 			$table_name = static::tableName();

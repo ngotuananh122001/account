@@ -1,6 +1,6 @@
-create table token (
+create table pwdReset (
   id int not null primary key,
   email varchar(255) not null,
-  token varchar(255) not null,
-  create_at timestamp not null default current_timestamp()
+  token text not null,
+  expire timestamp not null
 );

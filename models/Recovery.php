@@ -4,9 +4,13 @@
 
 	class Recovery extends \core\Model {
 
+		public $email;
+		public $token;
+		public $expire;
+
 		public static function tableName() {
 
-			return 'token';
+			return 'pwdReset';
 		}
 
 		public static function primaryKey() {
@@ -16,7 +20,7 @@
 
 		public static function attributes() {
 
-			return ['email', 'token'];
+			return ['email', 'token', 'expire'];
 		}
 	}
 ?>

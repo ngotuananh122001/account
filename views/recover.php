@@ -11,50 +11,7 @@
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<title>Recover</title>
 	<script src="/views/js/common.js"></script>
-	<script>
-		$(document).ready(function(e) {
-
-			$('#recover-form').submit(function(e) {
-
-				e.preventDefault();
-				refreshFeedBack();
-
-				var form_data = $(this)
-					.serializeArray()
-					.reduce(function (json, {name, value}) {
-						json[name] = value;
-						return json;
-					}, {});
-
-				$.ajax({
-					url: '/recover',
-					type: 'POST',
-					dataType: 'json',
-					data: form_data,
-					success: function(res) {
-
-						console.log(res);
-					},
-					error: function(xhr, textStatus, errorThrown) {
-
-						console.log(xhr.responseJSON);
-						if (xhr.status === 400) {
-
-							var errors_obj = xhr.responseJSON.errors;
-
-							form = e.target;
-							for (var key in errors_obj) {
-								feedBack(form, key, errors_obj[key][0]);
-							}
-
-							grecaptcha.reset();
-						}
-					}
-
-				});
-			})
-		});
-	</script>
+	<script src="/views/js/recover.js"></script>
 </head>
 
 <body>
@@ -94,6 +51,10 @@
 				</div>
 
 			</form>
+
+			<div class='feedback-resetpwd' style="display: none;">
+				Request successfully. Please check your email!
+			</div>
 		</div>
 	</div>
 
