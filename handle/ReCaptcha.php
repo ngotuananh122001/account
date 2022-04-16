@@ -4,12 +4,10 @@
 
 	class ReCaptcha {
 
-		const SECRET_KEY = "6LfkfXMfAAAAAIyGI71bdX76fgXrRgpajHtlVgBh";
-
-		public static function verifyCaptcha(\core\Validator $form, $captcha_response) {
+		public static function verifyCaptcha(\core\Validator $form, $captcha_response, $SECRET_KEY) {
 
 			$verify_response = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='
-				.self::SECRET_KEY.'&response='.$captcha_response);
+				.$SECRET_KEY.'&response='.$captcha_response);
 
 			$response_data = json_decode($verify_response);
 			if ($response_data->success) {

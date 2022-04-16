@@ -39,7 +39,7 @@
 		public function register() {
 
 			// verify captch
-			if (! ReCaptcha::verifyCaptcha($this, $_POST['g-recaptcha-response'])) {
+			if (! ReCaptcha::verifyCaptcha($this, $_POST['g-recaptcha-response'], \core\Application::$config['PRIVATE_KEY'])) {
 				return false;
 			}
 

@@ -1,7 +1,7 @@
 <?php
 
 	// get user in current session
-	$user = \core\Application::$app->user ?? new \models\User();
+	$user = \core\Application::$app->user;
 
 	$firstname = $user->firstname;
 	$lastname = $user->lastname;
@@ -23,9 +23,9 @@
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:500,400,300,400italic,700,700italic,400italic,300italic&amp;subset=vietnamese,latin" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="/views/css/home.css" />
+	<link rel="stylesheet" href="/css/home.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="/views/js/home.js"></script>
+	<script src="/js/home.js"></script>
 
 </head>
 

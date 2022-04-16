@@ -24,7 +24,7 @@
 					'key' => 'image',
 					'ext' => ['jpg', 'png', 'jpeg'],
 					'maxSize' => 1024 * 1024, # bytes = 1MB
-					'dir' => 'uploads',
+					'dir' => 'public/uploads',
 				];
 
 				if (!$this->updateFile($infor)) {

@@ -5,11 +5,11 @@
 	<meta charset="UTF-8" />
 	<title>Sign up | Base.vn</title>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:500,400,300,400italic,700,700italic,400italic,300italic&amp;subset=vietnamese,latin" />
-	<link rel="stylesheet" href="/views/css/auth.css" />
+	<link rel="stylesheet" href="/css/auth.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-	<script src="/views/js/common.js"></script>
-	<script src="/views/js/register.js"></script>
+	<script src="/js/common.js"></script>
+	<script src="/js/register.js"></script>
 </head>
 
 <body>
@@ -80,7 +80,7 @@
 					</div>
 				</div>
 
-				<div class="g-recaptcha" data-sitekey="6LfkfXMfAAAAAHgm2xcqCl2W--YjekNkWJh7yh2Y"></div>
+				<div class="g-recaptcha" data-sitekey="<?php echo \core\Application::$config['PUBLIC_KEY'] ?>"></div>
 				<div class="feedback feedback-captcha">
 				</div>
       			<br/>
