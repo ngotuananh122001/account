@@ -18,6 +18,8 @@ use core\Router;
 	$app->router->get('/recover', [\controllers\AuthController::class, 'recover']);
 	$app->router->post('/recover', [\controllers\AuthController::class, 'recover']);
 	$app->router->get('/reset-password', [\controllers\AuthController::class, 'resetPwd']);
+	$app->router->post('/reset-password', [\controllers\AuthController::class, 'resetPwd']);
+
 
 	$app->router->get('/', [\controllers\SiteController::class, 'home']);
 

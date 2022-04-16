@@ -22,6 +22,10 @@ $(document).ready(function(e) {
                 $('.feedback-resetpwd').css({
                     'display': 'block',
                 })
+
+				setTimeout(function () {
+					window.location.replace('/login');
+				}, 4000);
             },
             error: function(xhr, textStatus, errorThrown) {
 

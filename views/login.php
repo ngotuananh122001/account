@@ -42,7 +42,7 @@
 				<div class="form-item">
 					<div class="label">
 						Password
-						<span></span>
+						<span><a href="/recover">Forget your password?</a></span>
 					</div>
 					<input type="password" name="password" />
 					<div class="feedback">
@@ -85,7 +85,7 @@
 					</div>
 
 					<div class="oauth-simple">
-						<a href="https://account.base.vn/a/guest">Login with Guest/Client access?</a>
+						<a href="/register">Register an account</a>
 					</div>
 				</div>
 			</form>

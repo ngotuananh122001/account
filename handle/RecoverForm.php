@@ -31,17 +31,17 @@
 
 		private function mailToRecover() {
 
-			$token = random_bytes(20);
-			
-			$url = 'http://www.localhost:8080/reset-password?token=' . bin2hex($token);
+			$token = bin2hex(random_bytes(20));
 
-			$expire = time() + 1800; // 30s
+			$url = 'http://www.localhost:8080/reset-password?token=' . $token;
+
+			$expire = time() + 1800; // 30'
 
 			\models\Recovery::delete(['email' => $this->email]);
 			// create new token in database
-			$recovery = new \models\Recovery(); 
+			$recovery = new \models\Recovery();
 			$recovery->email = $this->email;
-			$recovery->token = password_hash($token, PASSWORD_DEFAULT);
+			$recovery->token = $token;
 			$recovery->expire = $expire;
 			$recovery->create();
 

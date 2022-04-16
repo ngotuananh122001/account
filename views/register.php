@@ -91,7 +91,7 @@
 					</div>
 				</div>
 
-				<div class="oauth">
+				<!-- <div class="oauth">
 					<div class="oauth-label">
 						<span>Or, login via single sign-on</span>
 					</div>
@@ -113,7 +113,7 @@
 					<div class="oauth-simple">
 						<a href="#">Login with Guest/Client access?</a>
 					</div>
-				</div>
+				</div> -->
 
 			</form>
 		</div>

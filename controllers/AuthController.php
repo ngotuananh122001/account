@@ -104,7 +104,23 @@
 			}
 
 			// POST method
-			
+			$reset_form = new \handle\ResetForm();
+			$reset_form->loadData($req->getBody());
+
+
+			if ($reset_form->validate() && $reset_form->reset()) {
+
+				return $this->responseToAjax([
+					'message' => 'success'
+				]);
+			} else {
+
+				$res->setStatusCode(400);
+				return $this->responseToAjax([
+					'message' => 'fail',
+					'errors' => $reset_form->errors,
+				]);
+			}
 		}
 	}
 
