@@ -121,10 +121,10 @@
 						<b>Email address</b>
 						<?php echo $email ?>
 					</div>
-					<div class="info">
+					<!-- <div class="info">
 						<b>Phone number</b>
 						0337933110
-					</div>
+					</div> -->
 				</div>
 
 			</div>

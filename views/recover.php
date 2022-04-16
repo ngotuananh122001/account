@@ -52,8 +52,7 @@
 
 			</form>
 
-			<h2 class='feedback-resetpwd' style="display: none;">
-				Request successfully. Please check your email!
+			<h2 class='feedback-resetpwd'>
 			</h2>
 		</div>
 	</div>

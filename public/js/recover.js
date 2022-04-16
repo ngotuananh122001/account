@@ -12,6 +12,8 @@ $(document).ready(function(e) {
                 return json;
             }, {});
 
+		$('.feedback-resetpwd').text('Chờ trong giây lát...');
+
         $.ajax({
             url: '/recover',
             type: 'POST',
@@ -19,13 +21,7 @@ $(document).ready(function(e) {
             data: form_data,
             success: function(res) {
 
-                $('.feedback-resetpwd').css({
-                    'display': 'block',
-                })
-
-				setTimeout(function () {
-					window.location.replace('/login');
-				}, 4000);
+                $('.feedback-resetpwd').text('Request successfully. Please check your email!');
             },
             error: function(xhr, textStatus, errorThrown) {
 

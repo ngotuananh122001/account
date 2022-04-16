@@ -42,6 +42,7 @@ if (empty($token)) {
 
 				form_data['token'] = '<?php echo $token ?>';
 
+				$('.feedback-resetpwd').text("Đợi một chút...");
 
 				$.ajax({
 					url: '/reset-password',
@@ -51,9 +52,7 @@ if (empty($token)) {
 					success: function(res) {
 
 						console.log(res);
-						$('.feedback-resetpwd').css({
-							'display': 'none',
-						});
+						$('.feedback-resetpwd').text('Create password successfully!');
 
 						setTimeout(function() {
 							window.location.replace('/login');
@@ -133,9 +132,8 @@ if (empty($token)) {
 
 			</form>
 
-			<div class='feedback-resetpwd' style="display: none;">
-				Request successfully. Please check your email!
-			</div>
+			<h2 class='feedback-resetpwd'>
+			</h2>
 		</div>
 	</div>
 
