@@ -1,0 +1,535 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+    height: 100%;
+	font-family: 'Roboto', 'Segoe UI', sans-serif;
+    font-size: 12px;
+	position: relative;
+}
+
+ul, li {
+	list-style: none;
+}
+
+#panel {
+    width: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #21272d;
+}
+
+.panel-header {
+    padding: 12px 0;
+    text-align: center;
+}
+
+.panel-header img {
+	width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.panel-body {
+
+}
+
+.panel-body .items {
+	text-align: center;
+    font-size: 24px;
+}
+
+.panel-body .item {
+	padding: 4px 0;
+	color: rgba(255,255,255,0.3);
+	cursor: pointer;
+}
+
+.panel-body .item.active {
+	color: #fff;
+	background: rgba(0,0,0,0.2);
+}
+
+.panel-body .item .icon {
+	padding: 11px 0;
+}
+
+.panel-body .item .info {
+	font-size: 12px;
+    padding-bottom: 10px;
+}
+
+.panel-footer {
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 4px 0;
+    text-align: center;
+    color: rgba(255,255,255,0.3);
+    cursor: pointer;
+}
+
+.panel-footer .icon {
+	font-size: 24px;
+    padding: 11px 0;
+}
+
+.panel-footer .logout {
+	font-size: 12px;
+    padding-bottom: 10px;
+}
+
+
+#main {
+    position: absolute;
+    top: 0;
+    left: 90px;
+    right: 270px;
+    bottom: 0;
+}
+
+.app-title {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #eee;
+}
+
+.app-title .back-link {
+    font-size: 24px;
+    color: #aaa;
+    width: 40px;
+    cursor: pointer;
+}
+
+
+.app-title-content {
+    flex: 1;
+}
+
+.app-title-content .label{
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #ccc;
+    padding-bottom: 3px;
+}
+
+.app-title-content .title {
+    font-size: 18px;
+    font-weight: 300;
+    color: #222;
+}
+
+.app-title .upload {
+    display: flex;
+    font-size: 15px;
+    padding: 9px 15px;
+    border-radius: 4px;
+    background-color: #17C286;
+    color: #fff;
+    cursor: pointer;
+}
+
+.app-title .upload-icon {
+    padding-right: 10px;
+}
+
+.app-title .upload-text {
+
+}
+
+#profile {
+    max-width: 640px;
+    margin: auto;
+    padding: 20px;
+}
+
+#profile .header {
+	display: flex;
+    position: relative;
+}
+
+#profile .image.upload {
+	position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#profile .image.upload img {
+	width: 100%;
+    height: 100%;
+}
+
+#profile .upload-form {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#profile .upload-form form {
+	width: 100%;
+    height: 100%;
+}
+
+#profile .upload-form input {
+    width: 100%;
+    height: 100%;
+    background: red;
+    opacity: 0;
+}
+
+#profile .text {
+    flex: 1;
+    padding-left: 20px;
+    padding-bottom: 30px;
+}
+
+#profile .title {
+	font-size: 26px;
+    color: #111;
+}
+
+#profile .subtitle {
+	font-size: 16px;
+    font-weight: 300;
+    color: #aaa;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+#profile .info {
+	font-size: 14px;
+    color: #000;
+    padding-top: 8px;
+}
+
+#profile .info b {
+	display: inline-block;
+    width: 110px;
+    font-weight: 500;
+    color: #666;
+}
+
+#profile .list {
+	padding: 40px 0 20px 0;
+	position: relative;
+}
+
+#profile .list .title {
+    font-size: 13px;
+    color: #aaa;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#profile .list .info {
+	font-size: 14px;
+    padding: 13px 13px 13px 0;
+    border-bottom: 1px dotted #ddd;
+}
+
+#profile .list .info b {
+	width: 160px;
+    color: #888;
+    font-size: 13px;
+}
+
+
+#profile .list.addition .add {
+    position: absolute;
+    top: 54px;
+    right: 8px;
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    color: #ddd;
+    cursor: pointer;
+}
+
+#profile .list.addition .add:hover {
+	color: #267cde;
+	border-color: #267cde;
+	opacity: 0.8;
+}
+
+#profile .list.addition .item-none {
+    font-size: 14px;
+    padding: 20px;
+    margin-top: 25px;
+    text-align: center;
+    background: #f8f8f8;
+    color: #888;
+    font-weight: 300;
+}
+
+
+
+
+
+
+
+
+#menu {
+	width: 270px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: #999;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    background-color: #f6f6f6;
+}
+
+.menu-header {
+    padding: 13px 15px;
+}
+
+.menu-header .name {
+    font-size: 22px;
+    font-weight: 300;
+    color: #111;
+}
+
+.menu-header .user-info {
+	font-size: 14px;
+    padding-top: 4px;
+    display: flex;
+}
+
+.menu-header .user-info .username {
+	padding-right: 15px;
+}
+
+.menu-header .user-info .email {
+
+}
+
+.menu-body {
+
+}
+
+.menu-item {
+
+}
+
+.menu-item .title {
+	font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 20px 20px 15px 20px;
+    border-top: 1px solid #eee;
+}
+
+.menu-item ul.box {
+
+}
+
+.menu-item li {
+    display: flex;
+    padding: 10px 10px 10px 28px;
+    align-items: center;
+    color: #555;
+    cursor: pointer;
+}
+
+.menu-item li.active {
+	color: #267cde;
+    font-weight: bold;
+}
+
+.menu-item li:hover {
+	background: rgba(255,255,255,0.5);
+}
+
+.menu-item .icon {
+    font-size: 16px;
+    padding-right: 15px;
+    color: #aaa;
+}
+
+.menu-item li.active .icon {
+	color: #267cde;
+	font-size: 14px;
+}
+
+.menu-item .text {
+	font-size: 14px;
+}
+
+/* Modal, popup */
+.modal {
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+}
+
+.modal .popup {
+    min-height: 90px;
+    min-width: 450px;
+    max-width: 900px;
+    background: #fff;
+    margin: auto;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.modal .popup-header {
+	font-size: 16px;
+    text-transform: uppercase;
+    padding: 15px 18px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.modal .popup-header .title {
+	flex: 1;
+    color: #555;
+    font-weight: bold;
+}
+
+
+.modal .popup-header .close {
+	position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 5px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
+	color: #aaa;
+    display: flex;
+}
+
+.modal .popup-header .close:hover {
+	background: #D96C6C;
+    color: #fff;
+}
+
+.modal .popup-header .close i {
+	margin: auto;
+}
+
+.modal .popup-content {	
+	padding: 30px 20px;
+}
+
+.form-rows {
+
+}
+
+.form-row {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	padding-bottom: 22px;
+}
+
+.form-row .label {
+	width: 180px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-row .sublabel {
+	font-size: 12px;
+	color: #999;
+	padding-top: 2px;
+}
+
+.form-row .input-data {
+	width: 520px;
+}
+
+
+.form-row .input-data input {
+    width: 100%;
+    font-size: 15px;
+    padding: 6px 8px;
+    color: #000;
+    border-top: 1px solid #d3d3d3;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #d3d3d3;
+    border-bottom: 1px solid #ccc;
+	border-radius: 3px;
+    outline: none;
+}
+
+.form-row .input-data input:focus {
+    outline: none;
+    box-shadow: 0px 0px 8px rgb(66 184 20 / 30%);
+    border-color: rgba(66, 184, 20, 0.7);
+}
+
+.form-button {
+    margin-top: 5px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    border-top: 1px dashed #ddd;
+}
+
+.form-button .button {
+    background: #ddd;
+    font-size: 14px;
+    width: 48%;
+    padding: 11px 0;
+    text-align: center;
+    color: #666;
+    border-radius: 3px;
+	cursor: pointer;
+	border: none;
+    outline: none;
+}
+
+.form-button .button.ok {
+	background: #63b814;
+    color: #fff;
+    font-weight: 500;
+}
+
+.form-button .button.cancel {
+
+}
+
+.hidden {
+	display: none;
+}
+
+
+
+
+
+
