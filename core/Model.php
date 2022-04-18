@@ -15,7 +15,6 @@
 			return $this->{static::primaryKey()};
 		}
 
-
 		public function create() {
 
 			$table_name = $this->tableName();

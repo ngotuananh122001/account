@@ -25,9 +25,9 @@
 			$this->db = new Database();
 
 			$primary_value = $this->session->get('user') ?? false;
+			$primary_key = \models\User::primaryKey();
 
 			if ($primary_value) {
-				$primary_key = \models\User::primaryKey();
 				$this->user = \models\User::findOne([$primary_key => $primary_value]);
 			}
 

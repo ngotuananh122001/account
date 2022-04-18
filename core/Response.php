@@ -10,7 +10,13 @@
 		}
 
 		public function redirect($path) {
+
 			header('Location: '.$path);
+		}
+
+		public function responseToAjax($data) {
+
+			echo json_encode($data);
 		}
 	}
 

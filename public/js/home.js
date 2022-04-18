@@ -6,7 +6,7 @@ $(document).ready(function () {
 		var form = new FormData($(this)[0]);
 
 		$.ajax({
-			url: '/update',
+			url: '/profile',
 			processData: false,
 			contentType: false,
 			type: 'POST',

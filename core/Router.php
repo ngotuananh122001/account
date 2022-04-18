@@ -15,6 +15,7 @@ class Router {
 	}
 
 	public function get($path, $callback) {
+
 		$this->routes['get'][$path] = $callback;
 	}
 
@@ -44,14 +45,10 @@ class Router {
 		return call_user_func($callback, $this->request, $this->response);
 	}
 
-	public function renderView($view, $params = []) {
-
-		foreach ($params as $key => $value) {
-			$$key = $value;
-		}
+	public function renderView($view) {
 
 		ob_start();
-		include_once __DIR__."/../views/$view.php";
+		include_once "../views/$view.php";
 		return ob_get_clean();
 	}
 }

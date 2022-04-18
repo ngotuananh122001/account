@@ -12,13 +12,13 @@
 
 			if ($update_form->update()) {
 
-				$this->responseToAjax([
+				$res->responseToAjax([
 					'message' => 'success',
 				]);
 			} else {
 
 				$res->setStatusCode(400);
-				return $this->responseToAjax([
+				return $res->responseToAjax([
 					'message' => 'fail',
 					'errors' => $this->errors
 				]);

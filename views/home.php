@@ -106,12 +106,6 @@
 			<div class="header">
 				<div class="image upload">
 					<img src="/uploads/<?php echo $img ?>">
-					<div class="upload-form">
-						<form action="/update" method="post" id="upload-image-form" enctype="multipart/form-data">
-							<label for="image-label"></label>
-							<!-- <input type="file" id="image-label" name="image" accept=".jpg, .jpeg, .png" class="js-image-input"> -->
-						</form>
-					</div>
 				</div>
 
 				<div class="text">
@@ -298,7 +292,7 @@
 				</div>
 			</div>
 			<div class="popup-content">
-				<form action="" id="upload-form" method="POST" enctype="multipart/form-data">
+				<form id="upload-form" enctype="multipart/form-data">
 
 					<!-- Code update profile -->
 

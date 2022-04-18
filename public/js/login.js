@@ -19,6 +19,8 @@ $(document).ready(function () {
 			data: form_data,
 			success: function (data) {
 
+				console.log("Hello world");
+				console.log(data);
 				window.location.replace('/');
 			},
 			error: function (xhr, textStatus, errorThrown) {

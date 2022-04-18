@@ -19,12 +19,12 @@
 
 				// create successfully
 				\core\Application::$app->session->setFlash('success', 'Thanks for registering');
-				return $this->responseToAjax([
+				return $res->responseToAjax([
 					'message' => 'success'
 				]);
 			} else {
 				$res->setStatusCode(400);
-				return $this->responseToAjax([
+				return $res->responseToAjax([
 					'message' => 'fail',
 					'errors' => $register_form->errors
 				]);
@@ -46,7 +46,7 @@
 			if ($login_form->validate() && $login_form->login()) {
 
 				// login sucessfully
-				return $this->responseToAjax([
+				return $res->responseToAjax([
 					'message' => 'success',
 				]);
 
@@ -54,7 +54,7 @@
 			} else {
 				// fail
 				$res->setStatusCode(400);
-				return $this->responseToAjax([
+				return $res->responseToAjax([
 					'message' => 'fail',
 					'errors' => $login_form->errors,
 				]);
@@ -83,13 +83,13 @@
 
 			if ($recover_form->validate() && $recover_form->recover()) {
 
-				return $this->responseToAjax([
+				return $res->responseToAjax([
 					'message' => 'success'
 				]);
 			} else {
 
 				$res->setStatusCode(400);
-				return $this->responseToAjax([
+				return $res->responseToAjax([
 					'message' => 'fail',
 					'errors' => $recover_form->errors,
 				]);
@@ -110,13 +110,13 @@
 
 			if ($reset_form->validate() && $reset_form->reset()) {
 
-				return $this->responseToAjax([
+				return $res->responseToAjax([
 					'message' => 'success'
 				]);
 			} else {
 
 				$res->setStatusCode(400);
-				return $this->responseToAjax([
+				return $res->responseToAjax([
 					'message' => 'fail',
 					'errors' => $reset_form->errors,
 				]);

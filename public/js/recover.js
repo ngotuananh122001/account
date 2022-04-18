@@ -26,6 +26,7 @@ $(document).ready(function(e) {
             error: function(xhr, textStatus, errorThrown) {
 
                 console.log(xhr.responseJSON);
+				$('.feedback-resetpwd').text('Please check again');
                 if (xhr.status === 400) {
 
                     var errors_obj = xhr.responseJSON.errors;

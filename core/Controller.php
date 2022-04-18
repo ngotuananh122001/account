@@ -9,10 +9,7 @@
 			return Application::$app->router->renderView($view, $params);
 		}
 
-		public function responseToAjax($data) {
 
-			echo json_encode($data);
-		}
 
 	}
 ?>
