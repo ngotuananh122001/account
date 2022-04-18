@@ -60,6 +60,7 @@ if (empty($token)) {
 					},
 					error: function(xhr, testStatus, errorThrown) {
 
+						$('.feedback-resetpwd').text("Vui lòng thử lại....");
 						console.log(xhr.responseJSON);
 						if (xhr.status === 400) {
 

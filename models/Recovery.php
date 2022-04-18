@@ -10,7 +10,7 @@
 
 		public static function tableName() {
 
-			return 'pwdReset';
+			return 'ResetPasswordToken';
 		}
 
 		public static function primaryKey() {

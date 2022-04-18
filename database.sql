@@ -6,7 +6,7 @@
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL PRIMARY KEY,
+  `id` int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
   `email` varchar(255) NOT NULL,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
@@ -23,10 +23,12 @@ CREATE TABLE `users` (
 --
 
 CREATE TABLE ResetPasswordToken (
-  id int not null primary key,
+  id int AUTO_INCREMENT not null primary key,
   email varchar(255) not null,
   token text not null,
   expire text not null
 );
+
+
 
 
