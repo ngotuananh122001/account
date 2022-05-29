@@ -12,3 +12,4 @@
 * Execute sql code in file `database.sql` using your name database
 * Open the project and move to the public folder
 * Run terminal: `php -S localhost:8080`
+### Enjoy
